@@ -103,8 +103,15 @@ class CurrentDoctor extends StatelessWidget {
   }
 }
 
-class SearchDoctor extends StatelessWidget {
+class SearchDoctor extends StatefulWidget {
   const SearchDoctor({Key? key}) : super(key: key);
+
+  @override
+  _SearchDoctorState createState() => _SearchDoctorState();
+}
+
+class _SearchDoctorState extends State<SearchDoctor> {
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -113,18 +120,29 @@ class SearchDoctor extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.cyan, // Warna border
+          color: Colors.cyan,
           width: 1.0,
         ),
         borderRadius: BorderRadius.circular(10),
       ),
-      child: const TextField(
-        decoration: InputDecoration(
-          border: InputBorder.none, // Hilangkan border bawaan TextField
+      child: TextField(
+        controller: _searchController,
+        onChanged: (keyword) {
+          // Lakukan sesuatu dengan keyword yang diketik
+          print("Keyword: $keyword");
+        },
+        decoration: const InputDecoration(
+          border: InputBorder.none,
           hintText: 'Cari Dokter',
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
   }
 }
 
