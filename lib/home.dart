@@ -198,7 +198,7 @@ class Service extends StatelessWidget {
                 ),
                 Container(
                     margin: const EdgeInsets.only(top: 10),
-                    child: const Text('Covid 19'))
+                    child: const Text('Doctor'))
               ],
             ),
           ),
@@ -222,7 +222,7 @@ class Service extends StatelessWidget {
                 ),
                 Container(
                     margin: const EdgeInsets.only(top: 10),
-                    child: const Text('Covid 19'))
+                    child: const Text('Medicine'))
               ],
             ),
           ),
@@ -246,7 +246,7 @@ class Service extends StatelessWidget {
                 ),
                 Container(
                     margin: const EdgeInsets.only(top: 10),
-                    child: const Text('Covid 19'))
+                    child: const Text('Hospital'))
               ],
             ),
           ),
@@ -296,7 +296,7 @@ class NearDoctor extends StatelessWidget {
 
     return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
       Container(
-          padding: EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 20),
           child: const Text(
             'Dokter di sekitar',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
@@ -306,10 +306,4 @@ class NearDoctor extends StatelessWidget {
       )
     ]);
   }
-}
-
-void main() {
-  runApp(const MaterialApp(
-    home: Home(),
-  ));
 }
